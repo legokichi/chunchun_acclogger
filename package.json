@@ -1,0 +1,24 @@
+{
+  "name": "chunchun-acclogger.js",
+  "version": "0.0.0",
+  "description": "",
+  "url": "https://github.com/legokichi/chunchun_acclogger",
+  "keywords": [],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/legokichi/chunchun_acclogger.git"
+  },
+  "dependencies": {
+    "convnetjs": "^0.3.0",
+    "express": "",
+    "socket.io": ""
+  },
+  "devDependencies": {},
+  "main": "./server.js",
+  "author": "legokichi",
+  "license": "MIT",
+  "contributors": [
+    "legokichi"
+  ]
+}
