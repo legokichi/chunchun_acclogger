@@ -15,19 +15,27 @@
   console.clear();
 
   socket = io(location.protocol+"//"+location.host);
-
+  alpha = 0
+  beta = 0
+  gamma = 0
   socket.on("connect", function() {
     socket.emit('state', [Date.now(), $("#state input[type=radio]").val()]);
     $("#state").change(function(ev) {
       return socket.emit('state', [ev.timeStamp, $(ev.target).val()]);
     });
     addEventListener("deviceorientation", function(ev) {
-      return socket.emit('deviceorientation', [ev.timeStamp, ev.alpha, ev.beta, ev.gamma]);
+      alpha = ev.alpha;
+      beta = ev.beta;
+      gamma = ev.gamma;
     });
     return addEventListener("devicemotion", function(ev) {
-      return socket.emit('devicemotion', [ev.timeStamp, ev.acceleration.x, ev.acceleration.y, ev.acceleration.z, ev.accelerationIncludingGravity.x, ev.accelerationIncludingGravity.y, ev.accelerationIncludingGravity.z]);
-    });
+      return socket.emit('devicemotion', [ev.timeStamp,
+      alpha, beta, gamma,
+      ev.acceleration.x, ev.acceleration.y, ev.acceleration.z,
+      ev.accelerationIncludingGravity.x, ev.accelerationIncludingGravity.y, ev.accelerationIncludingGravity.z]
+    );
   });
+});
 
 }).call(this);
 </script>
