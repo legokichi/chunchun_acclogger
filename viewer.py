@@ -21,7 +21,7 @@ gx = []
 gy = []
 gz = []
 
-for row in getRows(csv.reader(open(dir+"devicemotion.csv", 'rb')))[40:]:
+for row in getRows(csv.reader(open(dir+"devicemotion1420782943153.csv", 'rb')))[1:]:
     timeStamps.append(int(row[0]))
     alpha.append(float(row[1]))
     beta.append(float(row[2]))
