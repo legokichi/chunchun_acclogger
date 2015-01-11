@@ -12,6 +12,7 @@
   "dependencies": {
     "convnetjs": "^0.3.0",
     "express": "",
+    "node-svm": "^2.1.2",
     "socket.io": ""
   },
   "devDependencies": {},
