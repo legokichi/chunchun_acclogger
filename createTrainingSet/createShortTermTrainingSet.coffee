@@ -65,7 +65,12 @@ main = ->
 
 
 
-
+readCSV = (path)->
+  fs.readFileSync(path, {encoding: "utf-8"})
+  .split("\n")
+  .filter (a)-> a.length > 0
+  .map (a)-> a.trim()
+  .map (a)-> a.split(",")
 
 
 log = (a)->
